@@ -5,15 +5,15 @@ import Interactive from "../pages/dashboard/Interactive";
 const sidebarItems = [
   
   {
-    id: "Dashboard",
-      link: "/Dashboard",
+    id: "dashboard",
+      link: "/dashboard",
       name: "Dashboard",
       component: <Dashboard />,
     },
   {
-	id: "city",
+	id: "interactive",
     link: "/interactive",
-    name: "interactive",
+    name: "Interactive",
     component: <Interactive />,
   },
  
