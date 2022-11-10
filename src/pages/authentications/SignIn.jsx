@@ -33,7 +33,7 @@ const SignIn = () => {
     const config = {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
-      },
+      }
     };
 
     axios
@@ -202,6 +202,7 @@ const SignIn = () => {
                 </label>
                 <input
                   id="Username"
+                  ref={usernameRef}
                   name="username"
                   type="text"
                   autocomplete="username"
@@ -216,6 +217,7 @@ const SignIn = () => {
                 </label>
                 <input
                   id="password"
+                  ref={passwordRef}
                   name="password"
                   type="password"
                   autocomplete="current-password"

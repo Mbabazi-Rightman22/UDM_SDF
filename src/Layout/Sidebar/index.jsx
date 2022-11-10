@@ -14,7 +14,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       <div
         id="sidebar"
         ref={sidebar}
-        className={`flex flex-col absolute z-40 left-0 top-0  lg:static lg:left-auto lg:top-auto h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-56  lg:sidebar-expanded:!w-56 2xl:!w-56 shrink-0 bg-yellow-100 p-4  ${
+        className={`flex flex-col absolute z-40 left-0 top-0  lg:static lg:left-auto lg:top-auto h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-56  lg:sidebar-expanded:!w-56 2xl:!w-56 shrink-0 bg-slate-400 p-4  ${
           sidebarOpen ? "-translate-x-56" : "translate-x-0"
         }`}
       >
@@ -58,10 +58,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <a
               className="absolute bottom-10 "
               rel="noreferrer"
-              href="https://www.kigalicity.gov.rw/"
+              href="$"
               target="_blank"
             >
-              Visit us at City Kigali
+              Visit us at UDM 
             </a>
           </div>
         </div>
