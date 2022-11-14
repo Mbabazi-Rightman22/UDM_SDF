@@ -1,7 +1,6 @@
 import React from "react";
 
 const Home = () => {
-    
   return (
     <div class="min-h-full">
       <nav class="bg-blue-400">
@@ -40,7 +39,7 @@ const Home = () => {
                   <a
                     href="/SignIn"
                     class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  > 
+                  >
                     Login
                   </a>
                 </div>
@@ -119,10 +118,12 @@ const Home = () => {
             >
               About
             </a>
-            <a 
+            <a
               href="/SignIn"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            > <i class="fa-solid fa-right-to-bracket mr-2"></i>
+            >
+              {" "}
+              <i class="fa-solid fa-right-to-bracket mr-2"></i>
               Login
             </a>
           </div>
@@ -134,6 +135,12 @@ const Home = () => {
           <h1 class="relative text-4xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-green-400  font-mono ">
             Urban Dynamic Mapping
           </h1>
+          <p>
+            As part of efforts to reconstruct Rwanda and nurture a shared
+            national identity, the Government of Rwanda drew on traditional
+            practices in Rwandan culture to adapt its development programmes to
+            the country’s needs and context.
+          </p>
         </div>
       </header>
       <main>
@@ -141,11 +148,14 @@ const Home = () => {
           <div class="px-2 py-6 sm:px-0">
             {/* <div class="h-96 rounded-lg border-4 border-dashed border-gray-200"></div> */}
             <div className="mb-4">
-            <img  src={require("./../../Images/Home.jpg")} class="max-w-full h-auto transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" alt="..." />
+              <img
+                src={require("./../../Images/Home.jpg")}
+                class="max-w-full h-auto transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
+                alt="..."
+              />
             </div>
             <div class="relative">
-
-    {/* <div class="relative h-56 overflow-hidden rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+              {/* <div class="relative h-56 overflow-hidden rounded-lg sm:h-64 xl:h-80 2xl:h-96">
   
         <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
             <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
@@ -186,78 +196,198 @@ const Home = () => {
     </button>
 </div>
             </div> */}
-            {/* <div> */}
-            <h2> Rwanda - Urban dynamics</h2>
-              <p>
-            
-                 Suburbanisation Since the 1960s, suburbs
-                have become diverse economically, politically and culturally.
-                Suburbanisation involved a movement or people to areas
-                immediately next to large cities. This process has been helped
-                by: - the development of large regional shopping centres -
-                change in employment (working from home, businesses set-up in
-                suburbs) - contruction of expressways, public transport.
-              </p>
-              <br />
-              <p>
-            
-            Suburbanisation Since the 1960s, suburbs
-           have become diverse economically, politically and culturally.
-           Suburbanisation involved a movement or people to areas
-           immediately next to large cities. This process has been helped
-           by: - the development of large regional shopping centres -
-           change in employment (working from home, businesses set-up in
-           suburbs) - contruction of expressways, public transport.
-         </p>
-         <br />
-         <p>
-            
-            Suburbanisation Since the 1960s, suburbs
-           have become diverse economically, politically and culturally.
-           Suburbanisation involved a movement or people to areas
-           immediately next to large cities. This process has been helped
-           by: - the development of large regional shopping centres -
-           change in employment (working from home, businesses set-up in
-           suburbs) - contruction of expressways, public transport.
-         </p>
-         <br />
-         <p>
-            
-            Suburbanisation Since the 1960s, suburbs
-           have become diverse economically, politically and culturally.
-           Suburbanisation involved a movement or people to areas
-           immediately next to large cities. This process has been helped
-           by: - the development of large regional shopping centres -
-           change in employment (working from home, businesses set-up in
-           suburbs) - contruction of expressways, public transport.
-         </p>
-         <br />
-         <p>
-            
-            Suburbanisation Since the 1960s, suburbs
-           have become diverse economically, politically and culturally.
-           Suburbanisation involved a movement or people to areas
-           immediately next to large cities. This process has been helped
-           by: - the development of large regional shopping centres -
-           change in employment (working from home, businesses set-up in
-           suburbs) - contruction of expressways, public transport.
-         </p>
-         <br />
-         <p>
-            
-            Suburbanisation Since the 1960s, suburbs
-           have become diverse economically, politically and culturally.
-           Suburbanisation involved a movement or people to areas
-           immediately next to large cities. This process has been helped
-           by: - the development of large regional shopping centres -
-           change in employment (working from home, businesses set-up in
-           suburbs) - contruction of expressways, public transport.
-         </p>
+              {/* <div> */}
+              <div className="bg-gray-100 px-6">
+                <div className="text-justify">
+                  <h2 className="font-bold">
+                    {" "}
+                    Principles and objectives of Imihigo
+                  </h2>
+                  <br />
+                  <h2 className="font-bold">Principles</h2>
+                  <p>Imihigo is governed by the following principles:</p>
+                  <ol className="list-decimal px-6">
+                    <li>
+                      Local: Each district decides what goes into its Imihigo.
+                      However, alignment with national priorities is required.
+                    </li>
+                    <li>
+                      Ambition: Pledges are made to achieve only what has not
+                      already been achieved or gained.
+                    </li>
+                    <li>
+                      Excellence: Imihigo is about driving outstanding
+                      performance that is worthy of praise.
+                    </li>
+                  </ol>
+                  <br />
+                  <h2 className="font-bold">Objectives of Imihigo</h2>
+                  <p>Imihigo has the following objectives:</p>
+                  <ol className="list-decimal px-6">
+                    <li>
+                      To speed up implementation of the local and national
+                      development agenda
+                    </li>
+                    <li>
+                      To ensure stakeholder ownership of the development agenda
+                    </li>
+                    <li>To promote accountability and transparency</li>
+                    <li>To promote results-oriented performance</li>
+                    <li>To instill innovation and encourage competitiveness</li>
+                    <li>
+                      To engage stakeholders (citizens, civil society, donors,
+                      private sector, etc.) in policy formulation and evaluation
+                    </li>
+                    <li>
+                      To promote zeal and determination to achieve set goals
+                    </li>
+                    <li>
+                      To instill a culture of regular performance evaluation
+                    </li>
+                  </ol>
+                  <br />
+                  <h2 className="font-bold">The Imihigo preparation process</h2>
+                  <p>
+                    Both Imihigo and action plans are used by the Government of
+                    Rwanda to define goals, targets and objectives. While
+                    different in their purpose, the two tools are interlinked.
+                    Action plans are sets of activities to be achieved within a
+                    set time period, usually a year. Imihigo are subsets of
+                    action plans showing priority activities to be used as a
+                    performance measure.
+                  </p>
+                  <br />
+                  <p>
+                    An action plan may contain any number of activities of a
+                    routine nature such as payment of salaries, whereas Imihigo
+                    define targets that have a significant impact on economic
+                    development, poverty reduction, good governance and social
+                    welfare.
+                  </p>
+                  <br />
+                  <p>
+                    When Imihigo are developed, government leaders are advised
+                    to ask some key questions before including activities in
+                    them. An activity is prioritised according to the following
+                    criteria:
+                  </p>
+                  <ol className="list-decimal px-6">
+                    <li>
+                      Will the activity have a positive effect on the welfare of
+                      the local population (for example by improving water
+                      access, transport, energy access, schools, and so on)?
+                    </li>
+                    <li>
+                      Will the activity create jobs for the local population?
+                    </li>
+                    <li>
+                      Will the activity create opportunities for income
+                      generation for the population/local government?
+                    </li>
+                    <li>
+                      Will the activity have an impact on poverty reduction?
+                    </li>
+                    <li>
+                      Will the activity be a priority for the residents in the
+                      area?
+                    </li>
+                    <li>
+                      Will the activity have synergy with development of other
+                      areas (an activity may have potential to impact
+                      development in neighbouring areas)?
+                    </li>
+                    <li>
+                      Will the activity be sustainable or are the results
+                      sustainable?
+                    </li>
+                    <li>
+                      Will there be ownership from the local population for the
+                      activity?
+                    </li>
+                    <li>
+                      Will it help to achieve the national targets and is it
+                      linked to national and international priorities,
+                      programmes or policies (SDGs, NST1, Vision 2050)?
+                    </li>
+                    <li>
+                      Can the activity produce quality results or outputs with
+                      minimum resources?
+                    </li>
+                    <li>
+                      Can the activity improve the way services are delivered or
+                      reduce costs?
+                    </li>
+                    <li>
+                      Will the activity promote social cohesion (unity and
+                      reconciliation)?
+                    </li>
+                    <li>
+                      Will the activity reduce social disorder or unrest (for
+                      example, insecurity, drug abuse, prostitution,
+                      environmental degradation, conflicts, corruption, and so
+                      on)?
+                    </li>
+                    <li>
+                      Will the activity address key cross-cutting issues
+                      (gender, HIV/AIDS, environment, social inclusion and
+                      youth)?
+                    </li>
+                    <li>
+                      Has the source of funds for implementation been
+                      determined?
+                    </li>
+                    <li>Is the activity realistic and can it be achieved?</li>
+                  </ol>
+                  <br />
+                  <div class=" grid grid-cols-3 gap-4">
+                    <div class="w-72 h-72 bg-cyan-300 bg-opacity-50 backdrop-blur-lg rounded drop-shadow-lg">
+                      <h2 className="font-semibold text-2xl p-8">
+                        Total Population
+                      </h2>
+                      <p className="font-semibold text-8xl">+12M</p>
+                    </div>
+                    <div class="w-72 h-72 bg-cyan-300  bg-opacity-50 backdrop-blur-md rounded drop-shadow-lg">
+                      <h2 className="font-semibold text-2xl p-8">
+                        Total Surface
+                      </h2>
+                      <p className="font-semibold text-5xl">26.338 SqK</p>
+                    </div>
+                    <div class="w-72 h-72 bg-cyan-300  bg-opacity-50 backdrop-blur-xl rounded drop-shadow-lg">
+                      <h2 className="font-semibold text-2xl p-8">
+                        Annual Budget
+                      </h2>
+                      <p className="font-semibold text-8xl">$4.6B</p>
+                    </div>
+                  </div>
+                  <div className="max-w-full h-auto mt-10 bg-gradient-to-r from-black to-slate-700 shadow-2xl">
+                    <div class="grid grid-cols-2 gap-2">
+                      <div className="h-80 text-gray-200 my-32 mx-8 mt-24">
+                        <p>
+                          {" "}
+                          <br />
+                          <br />
+                          "After 1994, everything was a priority and our people
+                          were completely broken. But we made the fundamental
+                          choices that guide us to this day.
+                          <p>One: We chose to stay together.</p>
+                          <p>Two: We chose to be accountable to ourselves.</p>
+                          <p> Three: We chose to think big."</p>
+                        </p>
+                        <br />
+                        H.E Paul Kagame - President of Rwanda
+                      </div>
+                      <div className="h-80 text-gray-200 m-2 mt-16">
+                        <img src={require("./../../Images/pk.jpg")} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-      </div>
+        </div>
       </main>
-      
+
       <hr />
       <footer class="bg-gray-300 dark:bg-gray-900">
         <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">

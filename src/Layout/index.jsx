@@ -31,7 +31,7 @@ const Layout = ({children}) => {
             flex justify-center items-center
             text-white text-l
             ">
-            Developed by ESRI Rwanda Ltd. &#169; 2022
+              © 2022 Government of the Republic of Rwanda.
         </footer>
 			</div>
 

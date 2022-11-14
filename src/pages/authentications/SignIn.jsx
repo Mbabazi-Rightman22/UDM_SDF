@@ -62,7 +62,7 @@ const SignIn = () => {
                 <div class="ml-10 flex items-baseline space-x-4">
                   <a
                     href="/"
-                    class=" text-white px-3 py-2 rounded-md text-sm font-medium"
+                    class=" text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
                     aria-current="page"
                   >
                     Home
@@ -145,7 +145,7 @@ const SignIn = () => {
           <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <a
               href="/"
-              class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+              class=" text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               aria-current="page"
             >
               Home
@@ -171,7 +171,7 @@ const SignIn = () => {
             </a>
             <a
               href="/SignIn"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              class="text-gray-300 bg-gray-900 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               {" "}
               <i class="fa-solid fa-right-to-bracket mr-2"></i>
@@ -182,7 +182,7 @@ const SignIn = () => {
       </nav>
       <div></div>
       <div class="w-screen h-screen flex justify-center items-center bg-gradient-to-r from-green-400 to-blue-500">
-        <div class="bg-white px-10 py-8 rounded-lg drop-shadow-lg space-y-5">
+        <div class=" px-10 py-8 rounded-lg bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg space-y-5">
           <div className="">
             <img
               class="mx-auto h-12 w-auto rounded-full"
