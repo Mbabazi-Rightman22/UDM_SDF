@@ -14,40 +14,55 @@ const Interactive = () => {
   const MyRef = useRef(null);
 
   useEffect(() => {
-    const indicator1 = new FeatureLayer({
-      url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/district_own_revenue_collection/FeatureServer/8",
-    });
-    const healthFacility = new FeatureLayer({
+    const land = new FeatureLayer({
       url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/land_consolidation/FeatureServer/8",
     });
-    const layer = new FeatureLayer({
+    const cash = new FeatureLayer({
+      url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/cash_crops/FeatureServer/5",
+    });
+    const revenue = new FeatureLayer({
+      url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/district_own_revenue_collection/FeatureServer/3",
+    });
+    const radical = new FeatureLayer({
+      url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/radical_terraces_construction_and_maintainance/FeatureServer/6",
+    });
+    const vups = new FeatureLayer({
+      url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/vup_fs/FeatureServer/0",
+    });
+    const human = new FeatureLayer({
+      url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/human_security_issues_addressed/FeatureServer/1",
+    });
+    const progresssive = new FeatureLayer({
       url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/progressive_terrace/FeatureServer/7",
       outfields: ["*"],
     });
-    const health = new FeatureLayer({
+    const gender = new FeatureLayer({
+      url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/gender_and_family_promotion/FeatureServer/2",
+    });
+    const demands = new FeatureLayer({
       url: "https://infrastructure.space.gov.rw/server/rest/services/Hosted/citizen_demands_complaints_resolved/FeatureServer/4",
     });
     // Sector level  GroupLayer
     const agriculture = new GroupLayer({
       title: "Agriculture",
       visible: true,
-      layers: [indicator1, health],
+      layers: [land, cash],
     });
     const district = new GroupLayer({
       title: "District Own Revenue",
-      layers: [layer],
+      layers: [revenue],
     });
     const environment = new GroupLayer({
       title: "Environment and Ressources",
-      layers: [healthFacility],
+      layers: [radical],
     });
     const citizen = new GroupLayer({
       title: "Citizen Demands",
-      layers: [],
+      layers: [demands],
     });
     const social = new GroupLayer({
       title: "Social Protection",
-      layers: [],
+      layers: [gender, human, vups],
     });
     // Sub_indicator level GroupLayer
     const demographicGroupLayer = new GroupLayer({
@@ -61,14 +76,14 @@ const Interactive = () => {
       title: "Transformation Government Cluster",
       visible: true,
       visibilityMode: "exclusive",
-      layers: [social],
+      layers: [citizen],
       opacity: 0.75,
     });
     const demo1 = new GroupLayer({
       title: "Social Transformation Cluster",
       visible: true,
       visibilityMode: "exclusive",
-      layers: [citizen],
+      layers: [social],
       opacity: 0.75,
     });
 
