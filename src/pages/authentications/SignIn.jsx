@@ -44,7 +44,7 @@ const SignIn = () => {
         } else {
           localStorage.setItem("token", response.data.token);
           toast.success("You have successfully login");
-          navigate("/interactive", { replace: true });
+          navigate("/dashboard", { replace: true });
         }
       })
       .catch((error) => {
@@ -82,7 +82,7 @@ const SignIn = () => {
                   </a>
 
                   <a
-                    href="#"
+                    href="/about"
                     class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About
@@ -164,7 +164,7 @@ const SignIn = () => {
               Reports
             </a>
             <a
-              href="#"
+              href="/about"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               About
