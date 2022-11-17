@@ -13,7 +13,11 @@ const AllRoutes = () => (
       <Route
         key={sidebarItem.id}
         path={sidebarItem.link}
-        element={<ProtectedRoute redirectTo='/'>{sidebarItem.component}</ProtectedRoute>}
+        element={
+          <ProtectedRoute redirectTo="/">
+            {sidebarItem.component}
+          </ProtectedRoute>
+        }
       />
     ))}
     <Route path="/" element={<Home />} />

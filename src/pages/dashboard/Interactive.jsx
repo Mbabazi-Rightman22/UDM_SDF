@@ -4,11 +4,14 @@ import Layout from "../../Layout";
 import Map from "@arcgis/core/Map";
 import MapView from "@arcgis/core/views/MapView";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
-import Legend from "@arcgis/core/widgets/Legend";
-import MapImageLayer from "@arcgis/core/layers/MapImageLayer";
+// import Legend from "@arcgis/core/widgets/Legend";
+// import MapImageLayer from "@arcgis/core/layers/MapImageLayer";
 import GroupLayer from "@arcgis/core/layers/GroupLayer";
 import LayerList from "@arcgis/core/widgets/LayerList";
-import Slider from "@arcgis/core/widgets/Slider";
+// import Slider from "@arcgis/core/widgets/Slider";
+// import Histogram from "@arcgis/core/widgets/Histogram";
+
+import { Doughnut, Pie } from "react-chartjs-2";
 
 const Interactive = () => {
   const MyRef = useRef(null);
@@ -81,7 +84,7 @@ const Interactive = () => {
     });
     const demo1 = new GroupLayer({
       title: "Social Transformation Cluster",
-      visible: true,
+      visible: false,
       visibilityMode: "exclusive",
       layers: [social],
       opacity: 0.75,
@@ -89,13 +92,16 @@ const Interactive = () => {
 
     // Combination of GroupLayers
     const demo = new GroupLayer({
-      title: "Polis Index",
+      title: "Policy Index",
       // visible: true,
       visibilityMode: "exclusive",
       layers: [demo1, demo0, demographicGroupLayer],
       opacity: 0.75,
     });
     /////////
+
+    // <Doughnut data={demo} options={demo} />;
+
     const map2 = new Map({
       basemap: "topo-vector",
     });
@@ -105,20 +111,44 @@ const Interactive = () => {
       zoom: 9,
       map: map2,
     });
+    // const simple = [
+    //   {
+    //     subject: "indicator",
+    //     fees: 120,
+    //   },
+    //   {
+    //     subject: "sub_indicator",
+    //     fees: 50,
+    //   },
+    //   {
+    //     subject: "sector",
+    //     fees: 95,
+    //   },
+    //   {
+    //     subject: "function",
+    //     fees: 70,
+    //   },
+    // ];
     //Adding layer to the map
+
     map1.when(function () {
       map2.add(demo);
       // map2.add(layer);
       // map2.add(indicator1);
     });
+    // typical usage
     const layerList = new LayerList({
       view: map1,
     });
     map1.ui.add(layerList, "top-left");
+    // map1.ui.add(simple, "bottom-right");
   }, []);
+
   return (
     <Layout>
       <div ref={MyRef} style={{ height: "95vh" }}></div>
+
+      {/* <Doughnut data={MyRef} /> */}
     </Layout>
   );
 };
