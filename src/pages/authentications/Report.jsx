@@ -31,7 +31,7 @@ const Report = () => {
                   </a>
 
                   <a
-                    href="#"
+                    href="about"
                     class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About
@@ -113,7 +113,7 @@ const Report = () => {
               Reports
             </a>
             <a
-              href="#"
+              href="/about"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               About
@@ -346,7 +346,7 @@ const Report = () => {
                                   Telephone
                                 </label>
                                 <input
-                                  type="number"
+                                  type="text"
                                   name="telephone"
                                   id="telephone"
                                   autocomplete="Telephone"
@@ -401,7 +401,7 @@ const Report = () => {
                                   for="city"
                                   class="block text-sm font-medium text-gray-700"
                                 >
-                                  City
+                                  Province
                                 </label>
                                 <input
                                   type="text"
@@ -418,7 +418,7 @@ const Report = () => {
                                   for="region"
                                   class="block text-sm font-medium text-gray-700"
                                 >
-                                  State / Province
+                                  District
                                 </label>
                                 <input
                                   type="text"
@@ -435,7 +435,7 @@ const Report = () => {
                                   for="postal-code"
                                   class="block text-sm font-medium text-gray-700"
                                 >
-                                  ZIP / Postal code
+                                  Sector
                                 </label>
                                 <input
                                   type="text"

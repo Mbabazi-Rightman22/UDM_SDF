@@ -13,7 +13,7 @@ const sidebarItems = [
   {
 	id: "interactive",
     link: "/interactive",
-    name: "Interactive",
+    name: "Interactive Web",
     component: <Interactive />,
   },
  

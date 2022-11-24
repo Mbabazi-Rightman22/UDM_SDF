@@ -3,7 +3,7 @@ import Logout from '../../partials/Logout';
 
 const Header = ({ sidebarOpen, setSidebarOpen }) => {
     return (
-        <header className="sticky top-0 bg-blue-400 px-2 sm:px-2 lg:px-2 border-b border-slate-200 z-30">
+        <header className="sticky top-0 bg-cyan-100 px-2 sm:px-2 lg:px-2 border-b border-slate-200 z-30">
             <div className="px-4 sm:px-6 lg:px-8 ">
                 <div className="flex items-center justify-between h-16 -mb-px ">
 
