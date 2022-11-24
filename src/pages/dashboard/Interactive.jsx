@@ -8,10 +8,13 @@ import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 // import MapImageLayer from "@arcgis/core/layers/MapImageLayer";
 import GroupLayer from "@arcgis/core/layers/GroupLayer";
 import LayerList from "@arcgis/core/widgets/LayerList";
+// import Collection from "@arcgis/core/core/Collection";
 // import Slider from "@arcgis/core/widgets/Slider";
 // import Histogram from "@arcgis/core/widgets/Histogram";
 
-import { Doughnut, Pie } from "react-chartjs-2";
+// import { Doughnut, Pie } from "react-chartjs-2";
+import App from "./Chart";
+import { Chart } from "react-chartjs-2";
 
 const Interactive = () => {
   const MyRef = useRef(null);
@@ -70,14 +73,15 @@ const Interactive = () => {
     // Sub_indicator level GroupLayer
     const demographicGroupLayer = new GroupLayer({
       title: "Economic Cluster",
-      visible: true,
+      visible: false,
       visibilityMode: "exclusive",
       layers: [environment, district, agriculture],
       opacity: 0.75,
     });
+
     const demo0 = new GroupLayer({
       title: "Transformation Government Cluster",
-      visible: true,
+      visible: false,
       visibilityMode: "exclusive",
       layers: [citizen],
       opacity: 0.75,
@@ -93,13 +97,26 @@ const Interactive = () => {
     // Combination of GroupLayers
     const demo = new GroupLayer({
       title: "Policy Index",
-      // visible: true,
+      visible: false,
+      maxScale: 12,
       visibilityMode: "exclusive",
       layers: [demo1, demo0, demographicGroupLayer],
       opacity: 0.75,
     });
-    /////////
+    console.log(demo.get.name);
 
+    demo.when(() => {
+      // land.definitionExpression = createDefinitionExpression("");
+      zoomToLayer(land);
+    });
+    /////////
+    function zoomToLayer(layer) {
+      return layer.queryExtent().then((response) => {
+        map1.goTo(response.extent).catch((error) => {
+          console.error(error);
+        });
+      });
+    }
     // <Doughnut data={demo} options={demo} />;
 
     const map2 = new Map({
@@ -111,31 +128,22 @@ const Interactive = () => {
       zoom: 9,
       map: map2,
     });
-    // const simple = [
-    //   {
-    //     subject: "indicator",
-    //     fees: 120,
-    //   },
-    //   {
-    //     subject: "sub_indicator",
-    //     fees: 50,
-    //   },
-    //   {
-    //     subject: "sector",
-    //     fees: 95,
-    //   },
-    //   {
-    //     subject: "function",
-    //     fees: 70,
-    //   },
-    // ];
-    //Adding layer to the map
 
+    map1.layerViews.on("change", (e) => {
+      console.log(e);
+    });
+    ///////////////////////////////////
+
+    ////////////////////////////////////////
     map1.when(function () {
       map2.add(demo);
       // map2.add(layer);
       // map2.add(indicator1);
     });
+    // map1.whenLayerView(sceneLayer).then((layerView) => {
+    //   sceneLayerView = layerView;
+    //   queryDiv.style.display = "block";
+    // });
     // typical usage
     const layerList = new LayerList({
       view: map1,
@@ -143,12 +151,32 @@ const Interactive = () => {
     map1.ui.add(layerList, "top-left");
     // map1.ui.add(simple, "bottom-right");
   }, []);
+  ///////////////////////////////////////////////////////////////////////////
 
   return (
     <Layout>
-      <div ref={MyRef} style={{ height: "95vh" }}></div>
-
-      {/* <Doughnut data={MyRef} /> */}
+      <div className="flex flex-row w-full h-auto">
+        <div className="flex w-3/5">
+          <div ref={MyRef} style={{ height: "95vh", width: "100%" }}></div>
+        </div>
+        <div className="flex w-2/5 h-full  ">
+          <div className="grid grid-col-2 gap-2 w-full">
+            <div className="col-span-2 h-48 ">
+              <select className="flex w-48 h-8 ml-9 mt-4 px-2 text-center justify-items-center justify-center self-auto">
+                <option selected>Policy Index</option>
+                <option value="Economic">Economic Cluster</option>
+                <option value="Transformation">
+                  Transformation Government Cluster
+                </option>
+                <option value="Social">Social Transformation Cluster</option>
+              </select>
+            </div>
+            <div className="col-span-2 h-auto">
+              <App />
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
