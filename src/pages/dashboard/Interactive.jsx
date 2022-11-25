@@ -14,7 +14,7 @@ import LayerList from "@arcgis/core/widgets/LayerList";
 
 // import { Doughnut, Pie } from "react-chartjs-2";
 import App from "./Chart";
-import { Chart } from "react-chartjs-2";
+// import { Chart } from "react-chartjs-2";
 
 const Interactive = () => {
   const MyRef = useRef(null);
@@ -60,7 +60,7 @@ const Interactive = () => {
     });
     const environment = new GroupLayer({
       title: "Environment and Ressources",
-      layers: [radical],
+      layers: [radical, progresssive],
     });
     const citizen = new GroupLayer({
       title: "Citizen Demands",
@@ -156,25 +156,11 @@ const Interactive = () => {
   return (
     <Layout>
       <div className="flex flex-row w-full h-auto">
-        <div className="flex w-3/5">
+        <div className="flex w-3/4">
           <div ref={MyRef} style={{ height: "95vh", width: "100%" }}></div>
         </div>
-        <div className="flex w-2/5 h-full  ">
-          <div className="grid grid-col-2 gap-2 w-full">
-            <div className="col-span-2 h-48 ">
-              <select className="flex w-48 h-8 ml-9 mt-4 px-2 text-center justify-items-center justify-center self-auto">
-                <option selected>Policy Index</option>
-                <option value="Economic">Economic Cluster</option>
-                <option value="Transformation">
-                  Transformation Government Cluster
-                </option>
-                <option value="Social">Social Transformation Cluster</option>
-              </select>
-            </div>
-            <div className="col-span-2 h-auto">
-              <App />
-            </div>
-          </div>
+        <div className="flex w-1/4 w-full h-full">
+          <App />
         </div>
       </div>
     </Layout>
